@@ -1,9 +1,9 @@
 version: '3'
 services:
   web:
-    image: go-evolution:v1.0
+    build: ./
     ports:
-      - "8080:80"
+      - "8083:80"
     depends_on:
       - db
     environment:
