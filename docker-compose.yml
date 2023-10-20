@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    image: go-evolution:v1.0
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:ghjzfa@db:5432/main
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: database_name
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
